@@ -1,12 +1,31 @@
 import React, { useState } from "react";
 import { CardMap, tarotCardMap } from "./Map";
-let cardData = require("../assets/tarot-data/tarot-images.json");
 
-function Card({ name, img }) {
+import myimg from "../assets/tarot-data/cards/c01.jpg"
+let cardData = require("../assets/tarot-data/tarot-images.json");
+const images = importAll(require.context('../assets/tarot-data/cards', false, /\.(png|jpe?g|svg)$/));
+
+
+
+
+function importAll(r) {
+  let imgs = {};
+  r.keys().forEach((item, index) => { 
+    // console.log(item)
+    imgs[item.replace('./', '')] = r(item); 
+    // console.log(imgs)
+  
+  });
+ 
+  return imgs
+}
+function Card({ name, image }) {
+    // console.log((images?.[0]))
   return (
     <div>
       <h2>{name}</h2>
-      <img src={cardData[img]} alt={name} />
+      <img 
+      src={images?.[image]} alt={name} />
     </div>
   );
 }
@@ -28,15 +47,13 @@ function EnterChart() {
     const chart = placements.map((placement) => ({ planet: placement }));
     setBirthChart(chart);
     const result = chart.map(({ planet }) => {
-      //   const tarotKey = Object.keys(CardMap).find((key) =>
-      //     CardMap.tarotCardMap[key].some((key) => planet.includes(key.value))
-      //   );
-      // console.warn('CardMap.tarotCardMap', CardMap)
       const tarotKey = "string";
+    
       if (tarotKey) {
+        console.log(planet);
         return (
           <li key={planet}>
-            {planet} - {tarotCardMap[planet] || "I dont have"}
+            {planet} - {tarotCardMap[planet] || "nope"}
           </li>
         );
       } else {
@@ -51,6 +68,8 @@ function EnterChart() {
     console.log(placements);
   }
   return (
+    <div>
+
     <div>
       <h1>ENTER BIRTH CHART</h1>
       <form onSubmit={(e) => e.preventDefault()}>
@@ -201,23 +220,28 @@ function EnterChart() {
           type="submit"
           className="btn btn-primary"
           onClick={handleSubmit}
-        >
+          >
           Submit
         </button>
       </form>
       {result && (
-        <div>
+          <div>
           <h2>Your Tarot Birth Chart:</h2>
           {result}
         </div>
       )}
+      </div>
 
       <div>
         <h1>Tarot Cards</h1>
         <div>
-          {cardData.cards.map((card) => (
-            <Card key={card.name} name={card.name} img={card.img} />
-          ))}
+          {cardData.cards.map((card, index) => {
+           // console.log("hey", index);
+            return <Card key={card.name} name={card.name} image={card.img} />
+          })}
+
+
+
         </div>
       </div>
     </div>
