@@ -19,20 +19,29 @@ function importAll(r) {
  
   return imgs
 }
-function Card({ name, image }) {
+function Card({ name, image, Astrology }) {
     // console.log((images?.[0]))
   return (
     <div>
       <h2>{name}</h2>
+      <h5>{Astrology}</h5>
       <img 
       src={images?.[image]} alt={name} />
     </div>
   );
 }
 
+
+function GetTarotCardFromAstroPlacement (astroPlacement) {
+  const cards = cardData.cards;
+
+  return cards.find((card) => { return card.Astrology === astroPlacement })
+}
+
 function EnterChart() {
   const [result, setResult] = useState(null);
   const [birthChart, setBirthChart] = useState([]);
+  
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -44,24 +53,43 @@ function EnterChart() {
     const jupiter = document.getElementById("jupiter").value;
     const saturn = document.getElementById("saturn").value;
     const placements = [sun, moon, mercury, venus, mars, jupiter, saturn];
-    const chart = placements.map((placement) => ({ planet: placement }));
+    const chart = placements.map((placement) => ({ astroPlacement: placement }));
     setBirthChart(chart);
-    const result = chart.map(({ planet }) => {
+
+
+    const result = chart.map(({ astroPlacement }) => {
       const tarotKey = "string";
-    
+    // if (astroPlacement === (cardData.card.Astrology)) {
+    //   return (
+    //     <li key={astroPlacement}>
+    //       {astroPlacement} - {this.cardData.card.Astrology || "nope"}
+    //     </li>
+    //   );
+    // }
       if (tarotKey) {
-        console.log(planet);
+        console.log("Astrology Placement:", astroPlacement);
+        
+        const astroCard = GetTarotCardFromAstroPlacement(astroPlacement)
+
+        console.log("AstroCard:", astroCard)
+
+
         return (
-          <li key={planet}>
-            {planet} - {tarotCardMap[planet] || "nope"}
+        
+          <li key={astroPlacement}>
+            {/* {astroPlacement} - {astroCard || 
+            // {astroPlacement} - (tarotCardMap[astroPlacement]=== card.Astrology) ||
+             "nope"} */}
+           {astroPlacement} - { astroCard ? <Card key={astroCard.name} name={astroCard.name || astroCard.name} image={astroCard.img} /> : "No corresponding card to this planet placement" }
+
           </li>
         );
       } else {
         console.log(CardMap);
         console.log(tarotKey);
-        console.log(planet);
+        console.log(astroPlacement);
         console.log();
-        return <li key={planet}>{planet}</li>;
+        return <li key={astroPlacement}>{astroPlacement}</li>;
       }
     });
     setResult(<ul>{result}</ul>);
@@ -232,18 +260,18 @@ function EnterChart() {
       )}
       </div>
 
-      <div>
+      {/* <div>
         <h1>Tarot Cards</h1>
         <div>
           {cardData.cards.map((card, index) => {
            // console.log("hey", index);
-            return <Card key={card.name} name={card.name} image={card.img} />
+            return <Card key={card.name} name={card.Astrology || card.name} image={card.img} />
           })}
 
 
 
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
