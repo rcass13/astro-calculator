@@ -5,7 +5,7 @@ import { images } from "../../scripts/images";
 import "../../assets/styles/cards.css";
 
 const combinations = {
-  10: ["The Wheel of Fortune", "The Magician"],
+  10: ["Wheel of Fortune", "The Magician"],
   11: ["Justice", "The High Priestess"],
   12: ["The Hanged Man", "The Empress"],
   13: ["Death", "The Emperor"],
@@ -14,7 +14,7 @@ const combinations = {
   16: ["The Tower", "The Chariot"],
   17: ["The Star", "Strength"],
   18: ["The Moon", "The Hermit"],
-  19: ["The Sun", "The Wheel of Fortune"],
+  19: ["The Sun", "Wheel of Fortune", "The Magician"],
   20: ["Judgement", "The High Priestess"],
   21: ["The World", "The Empress"],
   1: ["The Magician", "The Wheel of Fortune"],
@@ -29,7 +29,7 @@ const combinations = {
 };
 
 function PersonalityTarotCard({ name, number }) {
-  const card = cardData.cards.find((card) => card.name === name);
+  const card = cardData.cards.find((card) => card?.name === name);
 
   return (
     <div>
@@ -37,7 +37,7 @@ function PersonalityTarotCard({ name, number }) {
         {number} - {name}
       </h4>
       <br />
-      <img style={{ maxWidth: "150px" }} src={images[card.img]} alt={name} />
+      <img style={{ maxWidth: "190px" }} src={images[card?.img]} alt={name} />
     </div>
   );
 }
@@ -57,7 +57,7 @@ class PersonalityCard extends React.Component {
 
   handleInputChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target?.name]: event.target.value,
       personalityCard: null,
       soulCard: null,
       error: "",
@@ -95,7 +95,7 @@ class PersonalityCard extends React.Component {
     const combinationNames = combinations[birthdateNumber];
     if (combinationNames) {
       const cards = combinationNames.map((cardName) =>
-        cardData.cards.find((card) => card.name === cardName)
+        cardData.cards.find((card) => card?.name === cardName)
       );
       this.setState({ birthdateNumber, combinationNames, cards, error: "" });
     } else {
@@ -122,12 +122,15 @@ class PersonalityCard extends React.Component {
     return (
       <div>
         <Header />
-        <div style={{ justifyContent: "center", alignItems: "center" }}>
+        <div
+          className="centered-card"
+          style={{ justifyContent: "center", alignItems: "center" }}
+        >
           <h1 className="margin-10px text-danger mb-4">
             CALCULATE PERSONALITY AND SOUL CARDS
           </h1>
           <div
-            style={{ maxWidth: "500px" }}
+            // style={{ maxWidth: "500px" }}
             className="card row text-white bg-success mb-3 p-4"
           >
             <form onSubmit={(e) => e.preventDefault()}>
@@ -172,18 +175,20 @@ class PersonalityCard extends React.Component {
                   />
                 </div>
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={this.calculateBirthdateNumber}
-              >
-                Calculate
-              </button>
+              <div className="centered">
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  onClick={this.calculateBirthdateNumber}
+                >
+                  Calculate
+                </button>
+              </div>
             </form>
           </div>
           {error && <div className="text-danger">{error}</div>}
           {birthdateNumber && combinationNames && (
-            <div className="bg-danger align-items-center justify-content-center">
+            <div  style={{ justifyContent: "center", padding:"60px", alignItems: "center" }} className="bg-info card ">
               <h4>Birthdate Number: {birthdateNumber}</h4>
               <h4>Combination: {combinationNames.join(" & ")}</h4>
               {cards && (
@@ -191,8 +196,8 @@ class PersonalityCard extends React.Component {
                   {cards.map((card, index) => (
                     <div key={index} className="card-item">
                       <PersonalityTarotCard
-                        name={card.name}
-                        number={card.number}
+                        name={card?.name}
+                        number={card?.number}
                       />
                     </div>
                   ))}

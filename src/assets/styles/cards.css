@@ -5,7 +5,25 @@
   }
   
   .card-item {
-    flex: 0 0 150px;
     margin: 10px;
     text-align: center;
+  }
+
+  .centered {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .centered-card{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .btn{
+    margin: 30px;
+  }
+  .suits-checkboxes{
+    display: flex;
+    flex-direction: column;
   }
