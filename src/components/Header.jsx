@@ -1,18 +1,20 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 function Header() {
   return (
     <Navbar bg="primary" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Astrology-Tarot Chart</Navbar.Brand>
+        <Navbar.Brand href="">Astrology-Tarot Chart</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="astroTarotCalc">Astrology Tarot Chart</Nav.Link>
             <Nav.Link href="personalityCard">Personality Card</Nav.Link>
+            <Nav.Link href="cardMeanings">Card Meanings</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

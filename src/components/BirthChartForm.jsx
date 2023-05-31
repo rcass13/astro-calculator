@@ -1,26 +1,13 @@
 import React, { useState } from "react";
 import { CardMap } from "./Map";
-let cardData = require("../assets/tarot-data/tarot-images.json");
-const images = importAll(
-  require.context("../assets/tarot-data/cards", false, /\.(png|jpe?g|svg)$/)
-);
+import {images} from "../scripts/images"
+let cardData = require("../assets/tarot-data/tarot-info.json");
 
-//import images
-function importAll(r) {
-  let imgs = {};
-  r.keys().forEach((item, index) => {
-    imgs[item.replace("./", "")] = r(item);
-  });
-  return imgs;
-}
 
 //Tarot Card data from dataset
 function TarotCard({name, image, astroPlacement}) {
-
-  
   return (
     <div>
-      
       <h4 className="text-dark">{astroPlacement} - {name}</h4>
       <br/>
       <img style={{ maxWidth: "150px" }} src={images?.[image]} alt={name} />

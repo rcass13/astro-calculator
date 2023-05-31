@@ -53,4 +53,3 @@ export function CardMap() {
   );
 }
 
-// export default CardMap;
