@@ -32,12 +32,6 @@ function CardList() {
         <p>Arcana: {card.arcana}</p>
         <p>Suit: {card.suit}</p>
         <img style={{ margin: "30px", maxWidth: "190px" }} src={images[card.img]} alt={card.name} />
-        <h3>Fortune Telling</h3>
-        <ul>
-          {card.fortune_telling.map((fortune) => (
-            <li key={fortune}>{fortune}</li>
-          ))}
-        </ul>
         <h3>Keywords</h3>
         <ul>
           {card.keywords.map((keyword) => (
@@ -170,8 +164,10 @@ function CardList() {
             <div className="" key={card.name}>
               <h2 className="accordion-header" id={`heading${card.name}`}>
                 <button
-                  style={{ maxWidth: "500px", color: getSuitLabelColor(card.suit) }}
-                  className={`accordion-button ${
+                  style={{ 
+                    // maxWidth: "500px", 
+                    color: getSuitLabelColor(card.suit) }}
+                  className={`bg-light accordion-button ${
                     selectedCard === card ? "" : "collapsed"
                   }`}
                   type="button"

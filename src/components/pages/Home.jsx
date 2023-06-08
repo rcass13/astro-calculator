@@ -9,7 +9,7 @@ function Home() {
       <div className="container">
         <h1 className="mt-5">Explore the world of tarot with Explorot!</h1>
         <p className="lead">
-          Using the iconic artwork of the Smith-Waite tarot deck Pamela Colman
+          Using the iconic artwork of the Smith-Waite tarot deck drawn by Pamela Colman
           Smith
         </p>
         <p className="lead">By Rose Cassidy</p>

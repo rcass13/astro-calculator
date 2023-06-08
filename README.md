@@ -1,70 +1,35 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Explorot Tarot App
+Explorot is a web application that allows you to explore the fascinating world of tarot. With Explorot, you can gain insights into the mystical art of divination and deepen your understanding of tarot cards. The app features various tools and resources to enhance your tarot journey.
 
-## Available Scripts
+## Features
+Astrology Tarot Calculator
+The Astrology Tarot Calculator enables you to calculate your astrological tarot cards based on your astrological natal chart. There are many places on the web you can calculate your natal chart, and I recommend the Co-Star app for IOS and Android (they also have a web natal chart calculator) as well the Chani App for iPhone (this one is my favorite). Once you have all of your planet placements, simply enter them into the form and find out what cards represent certain astrological placements. By discovering the connection between your birth chart and tarot, you can gain a deeper understanding of how astrology influences the tarot. 
 
-In the project directory, you can run:
+## Personality/Soul Cards
+Explore your Personality/Soul Cards, also known as birth cards, with this feature. By understanding the connection between numerology and tarot, you can identify the tarot cards that represent your personality and soul traits. Discover the profound insights hidden within the cards and gain a greater understanding of yourself.
 
-### `npm start`
+## Tarot Card Meanings
+Enhance your tarot readings with the Tarot Card Meanings feature. This feature provides in-depth interpretations and insights into the meanings of all the cards. Filter cards by suit and explore the symbolism and messages behind each card to deepen your connection with the tarot and improve your ability to interpret the cards accurately. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
+To get started with Explorot, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Fork the Explorot repository to your GitHub account.
+Clone the forked repository to your local machine.
+Install the necessary dependencies by running the following command:
+shell
+Copy code
+npm install
+Start the development server by running the following command:
+npm start
+Open your web browser and navigate to http://localhost:3000 to access the Explorot Tarot App.
 
-### `npm test`
+## Technologies Used
+### Explorot is built using the following technologies:
+React
+React Router
+Bootstrap
+CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Tarot Data credit to DARIA CHEMKAEVA on kaggle
