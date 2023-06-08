@@ -16,12 +16,9 @@ function Header() {
             <Nav.Link href="personalityCard">Personality Card</Nav.Link>
             <Nav.Link href="cardMeanings">Card Meanings</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item href="https://github.com/rcass13">
+                Creator's GitHub
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
               <NavDropdown.Item href="https://rose-cassidy-react-portfolio.herokuapp.com/#home">
                 Creator's Portfolio
               </NavDropdown.Item>
