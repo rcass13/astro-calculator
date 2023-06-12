@@ -2,12 +2,15 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import logo from "../assets/images/logo.png"
 
 function Header() {
   return (
     <Navbar bg="primary" expand="lg">
       <Container>
-        <Navbar.Brand href="/">Explorot</Navbar.Brand>
+      <Navbar.Brand href="/">
+          <img src={logo} alt="Logo" style={{ height: "50px", marginRight: "10px" }}/> Explorot
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
