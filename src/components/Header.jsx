@@ -18,7 +18,7 @@ function Header() {
             <Nav.Link href="astroTarotCalc">Astrology Tarot Chart</Nav.Link>
             <Nav.Link href="personalityCard">Personality Card</Nav.Link>
             <Nav.Link href="cardMeanings">Card Meanings</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title="More" id="basic-nav-dropdown">
               <NavDropdown.Item href="https://github.com/rcass13">
                 Creator's GitHub
               </NavDropdown.Item>
