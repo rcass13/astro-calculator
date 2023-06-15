@@ -22,7 +22,7 @@ function Header() {
               <NavDropdown.Item href="https://github.com/rcass13">
                 Creator's GitHub
               </NavDropdown.Item>
-              <NavDropdown.Item href="https://rose-cassidy-react-portfolio.herokuapp.com/#home">
+              <NavDropdown.Item href="https://rose-cassidy-portfolio.herokuapp.com/#home" target="_blank">
                 Creator's Portfolio
               </NavDropdown.Item>
             </NavDropdown>
